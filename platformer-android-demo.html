@@ -460,7 +460,7 @@
         triggerShout('HIDUP LEX!', 1400);
       }
 
-      // Teriakan otomatis tiap ~4 detik
+      // Teriakan otomatis tiap ~2 detik
       if (performance.now() > nextAutoShout) {
         triggerShout('HIDUP LEX!', 1500);
         nextAutoShout = performance.now() + 4200;
@@ -850,7 +850,7 @@
 
     function drawCloud(cx, cy, s) {
       ctx.save();
-      // Bayangan lembut bawah awan
+      // Bayangan lembut bawah awan dengan hujan
       ctx.fillStyle = 'rgba(120,170,220,0.25)';
       ctx.beginPath();
       ctx.ellipse(cx + 22 * s, cy + 16 * s, 40 * s, 10 * s, 0, 0, Math.PI * 2);
