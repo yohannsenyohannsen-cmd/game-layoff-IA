@@ -338,7 +338,7 @@
     let shoutUntil = 0;
     let nextAutoShout = 0;
     function triggerShout(text, durationMs) {
-      shoutText = text || 'HIDUP JOKOWI!';
+      shoutText = text || 'HIDUP LEX!';
       shoutUntil = performance.now() + (durationMs || 1500);
     }
 
@@ -457,12 +457,12 @@
         player.vy = JUMP_FORCE;
         player.onGround = false;
         sfxJump();
-        triggerShout('HIDUP JOKOWI!', 1400);
+        triggerShout('HIDUP LEX!', 1400);
       }
 
       // Teriakan otomatis tiap ~4 detik
       if (performance.now() > nextAutoShout) {
-        triggerShout('HIDUP JOKOWI!', 1500);
+        triggerShout('HIDUP LEX!', 1500);
         nextAutoShout = performance.now() + 4200;
       }
 
@@ -533,7 +533,7 @@
         }
       }
 
-      // Bos terakhir (anjing besar)
+      // Bos terakhir (ORANG besar)
       if (boss && !boss.defeated) {
         boss.x += boss.vx;
         if (boss.x < boss.min || boss.x + boss.w > boss.max) boss.vx *= -1;
@@ -794,7 +794,7 @@
         ctx.stroke();
       }
 
-      // ===== Balon teriakan "HIDUP JOKOWI!" =====
+      // ===== Balon teriakan "HIDUP LEX!" =====
       const now = performance.now();
       if (shoutText && now < shoutUntil) {
         const remaining = shoutUntil - now;
@@ -1092,7 +1092,7 @@
       ctx.arc(hx, hy + hr - 4, hr - 6, 0.15 * Math.PI, 0.85 * Math.PI);
       ctx.stroke();
 
-      // Papan tanda "4.1/4.2" di atas
+      // Papan tanda "41/42" di atas
       const label = b.label;
       ctx.font = 'bold 20px Arial, sans-serif';
       const fw = ctx.measureText(label).width + 24;
@@ -1349,7 +1349,7 @@
         drawCat(e);
       }
 
-      // Bos terakhir: anjing besar 4.1/4.2
+      // Bos terakhir: ORANG besar 41/42
       if (boss && !boss.defeated) drawBossDog(boss);
 
       // Bonus terakhir: kucing besar LEX Indonesia
